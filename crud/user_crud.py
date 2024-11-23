@@ -7,7 +7,7 @@ def create_user(username: str, password: str) -> Optional[Dict[str,str]]:
         raise ValueError("Username and password cannot be empty.")
 
     hashed_password = hash_password(password)
-    query = "INSERT INTO `users` (`username`, `password`) VALUES (%s, %s)"
+    query = "INSERT INTO `user` (`username`, `password`) VALUES (%s, %s)"
 
     try:
         with db_connection() as connection:
